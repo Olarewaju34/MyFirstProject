@@ -1,0 +1,15 @@
+C:\Users\HP\Desktop\TransportSystem\obj\Debug\net6.0\TransportSystem.csproj.AssemblyReference.cache
+C:\Users\HP\Desktop\TransportSystem\obj\Debug\net6.0\TransportSystem.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HP\Desktop\TransportSystem\obj\Debug\net6.0\TransportSystem.AssemblyInfoInputs.cache
+C:\Users\HP\Desktop\TransportSystem\obj\Debug\net6.0\TransportSystem.AssemblyInfo.cs
+C:\Users\HP\Desktop\TransportSystem\obj\Debug\net6.0\TransportSystem.csproj.CoreCompileInputs.cache
+C:\Users\HP\Desktop\TransportSystem\bin\Debug\net6.0\TransportSystem.exe
+C:\Users\HP\Desktop\TransportSystem\bin\Debug\net6.0\TransportSystem.deps.json
+C:\Users\HP\Desktop\TransportSystem\bin\Debug\net6.0\TransportSystem.runtimeconfig.json
+C:\Users\HP\Desktop\TransportSystem\bin\Debug\net6.0\TransportSystem.dll
+C:\Users\HP\Desktop\TransportSystem\bin\Debug\net6.0\TransportSystem.pdb
+C:\Users\HP\Desktop\TransportSystem\obj\Debug\net6.0\TransportSystem.dll
+C:\Users\HP\Desktop\TransportSystem\obj\Debug\net6.0\refint\TransportSystem.dll
+C:\Users\HP\Desktop\TransportSystem\obj\Debug\net6.0\TransportSystem.pdb
+C:\Users\HP\Desktop\TransportSystem\obj\Debug\net6.0\TransportSystem.genruntimeconfig.cache
+C:\Users\HP\Desktop\TransportSystem\obj\Debug\net6.0\ref\TransportSystem.dll
