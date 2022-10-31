@@ -9,16 +9,13 @@ namespace TransportSystem.Menus
 {
     public class Menus
     {
-        private static ITransportRepo transportRepo;
         private static TransportDto transportDto;
         private static ITransportService transportService;
-        private static Admin admin;
+
         public Menus()
         {
             transportDto = new TransportDto();
-            transportRepo = new TranportRepo();
             transportService = new TransportService();
-            admin = new Admin();
         }
         public void MyMenu()
         {
@@ -31,17 +28,17 @@ namespace TransportSystem.Menus
                 {
                     case "1":
                         Console.Write("Enter UserName: ");
-                        string username = Console.ReadLine();
+                        var username = Console.ReadLine();
                         Console.Write("Enter password: ");
-                        string password = Console.ReadLine();
-                        var employee = transportService.Login(username, password);
+                        var password = Console.ReadLine();
+                        var employee = transportService.Login(password);
                         if (employee == null)
                         {
                             Console.WriteLine("Invalid Password");
                         }
                         else
                         {
-                            if (employee.Password == admin.Password && employee.UserName == admin.UserName  )
+                            if (employee.Role == Role.Admin)
                             {
                                 AdminMenu();
                             }
@@ -69,7 +66,14 @@ namespace TransportSystem.Menus
                 switch (option)
                 {
                     case "1":
+                        Console.WriteLine("");
                         transportService.TicketSales(transportDto);
+                        Console.WriteLine("Your Ticket");
+                        transportService.PrintTickets(transportDto);
+                        break;
+                    case "2":
+                        Console.WriteLine("");
+                        transportService.GetAll();
                         break;
                     case "0":
                         flag = false;
@@ -84,6 +88,8 @@ namespace TransportSystem.Menus
         private void PrintAdminMenu()
         {
             Console.WriteLine("Enter 1 to buy tickets");
+            Console.WriteLine("Enter 2 to view all ticket sold");
+            Console.WriteLine("Enter 0 to go back to main menu");
         }
         private void PrintMenu()
         {

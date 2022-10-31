@@ -15,16 +15,18 @@ namespace TransportSystem.Service
             transportRepo = new TranportRepo();
         }
 
-        public void AdminRecords()
+        
+
+        public void GetAll()
         {
-            var e = new Admin
+            var transports = transportRepo.GetTransports();
+            foreach (var transport in transports)
             {
-                UserName = "Olarewaju",
-                Password = "Olarewaju$112"
-            };
+                PrintAll(transport);
+            }
         }
 
-        public Admin Login(string username, string password)
+        public Admin Login(string password)
         {
             var admin = transportRepo.GetAdmin(password);
             if (admin != null && admin.Password == password)
@@ -34,29 +36,38 @@ namespace TransportSystem.Service
             return null;
         }
 
-        public void PrintTickets(Transport transport)
+        public void PrintAll(Transport transport)
         {
-            Console.WriteLine($"{transport.PriceOfBus}\n{transport.Mode}\n{transport.Route}\n{transport.Date}");
+            Console.WriteLine($"${transport.PriceOfBus}\t{transport.Mode}\t{transport.Route}\t{transport.Date}");
+        }
+
+        public void PrintTickets(TransportDto transportDto)
+        {
+            Console.WriteLine($"Ticket Price: ${transportDto.PriceOfBus}\tVehicle: {transportDto.Mode}\tDetination: {transportDto.Route}");
         }
 
         public void TicketSales(TransportDto request)
         {
             var transports = transportRepo.GetTransports();
-            int route = Helper.SelectEnum("Enter 1 for ojota\n 2 for Maryland\n3 for Idiroko\n4 for Anthony\n5 for Obanikoro\n6 for Palm Groove\n7 for Onipanu\n8 for Fadeyi", 1, 7);
+            int route = Helper.SelectEnum("Enter 1 for ojota\t2 for Maryland\t3for Idiroko\t4 for Anthony\t5 for Obanikoro\t6 for Palm Groove\t7 for Onipanu\n8 for Fadeyi: ", 1, 7);
             request.Route = (Route)route;
 
-            int mode = Helper.SelectEnum("Enter for 1 for korokpe\n2 for Danfo\n3 for Brt", 1, 3);
+            int mode = Helper.SelectEnum("Enter for 1 for korokpe\n2 for Danfo\n3 for Brt: ", 1, 3);
             request.Mode = (Mode)mode;
 
             DateTime date = DateTime.Now;
+
 
             Transport transport = new Transport
             {
                 Route = request.Route,
                 Mode = request.Mode,
-                Date = date,
+                Date = date
             };
             transports.Add(transport);
         }
+
+
+
     }
 }

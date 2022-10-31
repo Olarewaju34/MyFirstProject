@@ -6,7 +6,7 @@ namespace TransportSystem.Repo
  public interface ITransportRepo
     {
         List<Transport> GetTransports();
-        Admin GetAdmin( string password);
+         Admin GetAdmin(string password);
       
     }
 }

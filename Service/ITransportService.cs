@@ -6,8 +6,9 @@ namespace TransportSystem.Service
     public interface ITransportService
     {
         void TicketSales(TransportDto request);
-        void PrintTickets(Transport transport);
-        void AdminRecords();
-        Admin Login(string username,string password);
+        void PrintTickets(TransportDto  transport);
+        void GetAll();
+        void PrintAll(Transport transport);
+        Admin Login(string password);
     }
 }
